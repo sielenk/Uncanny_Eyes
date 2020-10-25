@@ -142,8 +142,14 @@ void setup(void) {
   uint8_t e; // Eye index, 0 to NUM_EYES-1
 
 #if defined(SYNCPIN) && (SYNCPIN >= 0) // If using I2C sync...
+  #if !defined(LEFT_EYE) && !defined(RIGHT_EYE)
   pinMode(SYNCPIN, INPUT_PULLUP);      // Check for jumper to ground
   if(!digitalRead(SYNCPIN)) {          // If there...
+  #elif defined(LEFT_EYE)
+  if (false) {
+  #else
+  if (true) {
+  #endif
     receiver = true;                   // Set this one up as receiver
     Wire.begin(SYNCADDR);
     Wire.onReceive(wireCallback);

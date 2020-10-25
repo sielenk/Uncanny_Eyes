@@ -10,7 +10,9 @@
 // Default shape includes the caruncle, creating distinct left/right eyes.
 // Hallowing, with one eye, does this by default
 #if defined(ADAFRUIT_HALLOWING) || defined(ARDUINO_SAMD_CIRCUITPLAYGROUND_EXPRESS) || defined(ARDUINO_NRF52840_CIRCUITPLAY)
-  #define SYMMETRICAL_EYELID
+  #if !defined(LEFT_EYE) && !defined(RIGHT_EYE)
+    #define SYMMETRICAL_EYELID
+  #endif
 #else                     // Otherwise your choice, standard is asymmetrical
   //#define SYMMETRICAL_EYELID
 #endif
