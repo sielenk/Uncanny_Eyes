@@ -69,9 +69,9 @@ eyeInfo_t eyeInfo[] = {
   #define DISPLAY_RESET     37  // Display reset pin
   #define DISPLAY_BACKLIGHT  7
   #define BACKLIGHT_MAX    128
-  //#define SYNCPIN         A2  // I2C sync if set, GND this pin on receiver
-  //#define SYNCADDR      0x08  // I2C address of receiver
-                                // (Try disabling SYMMETRICAL_EYELID then)
+  #define SYNCPIN         A2  // I2C sync if set, GND this pin on receiver
+  #define SYNCADDR      0x08  // I2C address of receiver
+                              // (Try disabling SYMMETRICAL_EYELID then)
 #elif defined(ARDUINO_SAMD_CIRCUITPLAYGROUND_EXPRESS) || defined(ARDUINO_NRF52840_CIRCUITPLAY)
   #include <Adafruit_ST7789.h> // 240x240 TFT display library
   #define DISPLAY_DC        A7 // Display data/command pin
